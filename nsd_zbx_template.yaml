@@ -1,0 +1,1313 @@
+zabbix_export:
+  version: '7.0'
+  template_groups:
+    - uuid: a571c0d144b14fd4a87a9d9b2aa9fcd6
+      name: Templates/Applications
+  templates:
+    - uuid: eacb9e3cb20143069fadd3b3351ec0ca
+      template: NSD
+      name: NSD
+      groups:
+        - name: Templates/Applications
+      items:
+        - uuid: 26d4bbf5c9a341488025de6846d0ae45
+          name: num.dropped
+          type: DEPENDENT
+          key: num.dropped
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.dropped=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: Status
+        - uuid: 882908a72c0a41f2a4af8b64fb66dbd8
+          name: num.queries
+          type: DEPENDENT
+          key: num.queries
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.queries=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: Status
+        - uuid: bd1c8e2f610942b48ba9e84e947bde9a
+          name: num.raxfr
+          type: DEPENDENT
+          key: num.raxfr
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.raxfr=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: Status
+        - uuid: 4255ad3e7ca74ca1b30f30bb562e0482
+          name: num.rxerr
+          type: DEPENDENT
+          key: num.rxerr
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.rxerr=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: Status
+        - uuid: df9d744903fb4d319e0cef18eb2529e0
+          name: num.tcp
+          type: DEPENDENT
+          key: num.tcp
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.tcp=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: Status
+        - uuid: cf9ff39aab7a48edb88b2975261bbfc6
+          name: num.tcp6
+          type: DEPENDENT
+          key: num.tcp6
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.tcp6=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: Status
+        - uuid: ec2f8179e9b94325887fbf5a5d540a6c
+          name: num.tls
+          type: DEPENDENT
+          key: num.tls
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.tls=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: Status
+        - uuid: 1cdfd83dc39e4a69a0b10d32ddbff52d
+          name: num.tls6
+          type: DEPENDENT
+          key: num.tls6
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.tls6=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: Status
+        - uuid: 12b1a69cfd49487ca12143449c7f87df
+          name: num.truncated
+          type: DEPENDENT
+          key: num.truncated
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.truncated=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: Status
+        - uuid: 92a6816076b847eb818aad3042b59740
+          name: num.txerr
+          type: DEPENDENT
+          key: num.txerr
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.txerr=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: Status
+        - uuid: 51639e98ecfb4522ba8b1e8faec7401f
+          name: num.udp
+          type: DEPENDENT
+          key: num.udp
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.udp=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: Status
+        - uuid: 73fad64052624f5585e6930d3b164dba
+          name: num.udp6
+          type: DEPENDENT
+          key: num.udp6
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.udp6=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: Status
+        - uuid: c90238acabc04ed0809af4f2264bc169
+          name: num.type.A
+          type: DEPENDENT
+          key: query.num.a
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.A=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 021b722415e1497c9e9257688941e942
+          name: num.type.AAAA
+          type: DEPENDENT
+          key: query.num.aaaa
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.AAAA=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: ed4070705a2741deb72755102aa07523
+          name: num.type.AFSDB
+          type: DEPENDENT
+          key: query.num.afsdb
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.AFSDB=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 8622533babc8469c8e273ea1b242c697
+          name: num.type.APL
+          type: DEPENDENT
+          key: query.num.apl
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.APL=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 635a807e8e4e48658fdd31e2d00102cd
+          name: num.type.CDNSKEY
+          type: DEPENDENT
+          key: query.num.cdnskey
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.CDNSKEY=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 73c3ed205c634d1891285e10d2d1987e
+          name: num.type.CDS
+          type: DEPENDENT
+          key: query.num.cds
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.CDS=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: b744fa0d59f541fbacff28992ef75d9b
+          name: num.type.CERT
+          type: DEPENDENT
+          key: query.num.cert
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.CERT=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: ff90402d10514a8b83cf692bca1656aa
+          name: num.type.CNAME
+          type: DEPENDENT
+          key: query.num.cname
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.CNAME=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 14df87d6bea4457aadb4b9749fbcaf6d
+          name: num.type.CSYNC
+          type: DEPENDENT
+          key: query.num.csync
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.CSYNC=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: a85f6e634bf041359ca0dfc5c00fc7b9
+          name: num.type.DHCID
+          type: DEPENDENT
+          key: query.num.dhcid
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.DHCID=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: fc38f5072f854bd38b02e39fd3b4f857
+          name: num.type.DNAME
+          type: DEPENDENT
+          key: query.num.dname
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.DNAME=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 2663a16141f940f783153730eb804e9a
+          name: num.type.DNSKEY
+          type: DEPENDENT
+          key: query.num.dnskey
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.DNSKEY=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 8c6367590a0148638574eab7de909d89
+          name: num.type.DS
+          type: DEPENDENT
+          key: query.num.ds
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.DS=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 4a8c7914cb044f6ab8e42995dd8a24a7
+          name: num.type.EUI48
+          type: DEPENDENT
+          key: query.num.eui48
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.EUI48=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 78c954ccd074443984d6dd8c832e6eb4
+          name: num.type.EUI64
+          type: DEPENDENT
+          key: query.num.eui64
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.EUI64=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 75cf0e7ec15944809a34284122dd4109
+          name: num.type.HINFO
+          type: DEPENDENT
+          key: query.num.hinfo
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.HINFO=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: c4962ed01e3746b786c5cb846b87978a
+          name: num.type.HTTPS
+          type: DEPENDENT
+          key: query.num.https
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.HTTPS=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 4ad4be7185cc4f4495e508bf8314d749
+          name: num.type.IPSECKEY
+          type: DEPENDENT
+          key: query.num.ipseckey
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.IPSECKEY=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: cb1ad8662ce14064a86732e20ee24fe8
+          name: num.type.ISDN
+          type: DEPENDENT
+          key: query.num.isdn
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.ISDN=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 8589e56377dd41a18fc031152c9365a6
+          name: num.type.KEY
+          type: DEPENDENT
+          key: query.num.key
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.KEY=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: c541d0baf3f948ed85fdcfe8ce407df9
+          name: num.type.KX
+          type: DEPENDENT
+          key: query.num.kx
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.KX=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 9b1c873b7fda47e79def9d2354240d52
+          name: num.type.L32
+          type: DEPENDENT
+          key: query.num.l32
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.L32=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 62dcf76d64ac4017bdc5b9a7f077fc98
+          name: num.type.L64
+          type: DEPENDENT
+          key: query.num.l64
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.L64=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 46e48fd0d34249afa08f772890df2d20
+          name: num.type.LOC
+          type: DEPENDENT
+          key: query.num.loc
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.LOC=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 1f58b7ed195349c088763615971d46bc
+          name: num.type.LP
+          type: DEPENDENT
+          key: query.num.lp
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.LP=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 3f123be087cd43b3a75fd6c951f16025
+          name: num.type.MB
+          type: DEPENDENT
+          key: query.num.mb
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.MB=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 8c44ecced14c4b67a78f38546a80fd72
+          name: num.type.MD
+          type: DEPENDENT
+          key: query.num.md
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.MD=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 809448d17d3c4fafaba04944418f5bd9
+          name: num.type.MF
+          type: DEPENDENT
+          key: query.num.mf
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.MF=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 5755d424dcd5412cb2531dfa38fac521
+          name: num.type.MG
+          type: DEPENDENT
+          key: query.num.mg
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.MG=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 546f6b1b9f9c432faf8ae393d21ce604
+          name: num.type.MINFO
+          type: DEPENDENT
+          key: query.num.minfo
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.MINFO=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 113d1c24584f4526b9af43c31ca5c53b
+          name: num.type.MR
+          type: DEPENDENT
+          key: query.num.mr
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.MR=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 77a93765fabd406491fdfc1d6f8af485
+          name: num.type.MX
+          type: DEPENDENT
+          key: query.num.mx
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.MX=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 7479fac8e9d44504b35b2282d65432e8
+          name: num.type.NAPTR
+          type: DEPENDENT
+          key: query.num.naptr
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.NAPTR=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 1056675734454494b567fb9bf6345693
+          name: num.type.NID
+          type: DEPENDENT
+          key: query.num.nid
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.NID=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 19679fdd5f4d445fae24cdea6c5ff995
+          name: num.type.NS
+          type: DEPENDENT
+          key: query.num.ns
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.NS=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: ddc931124ec84459802d7f4aeefa1bc1
+          name: num.type.NSAP
+          type: DEPENDENT
+          key: query.num.nsap
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.NSAP=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 2b034fe4898b439ebdb13c030a09cefc
+          name: num.type.NSEC
+          type: DEPENDENT
+          key: query.num.nsec
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.NSEC=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 4a56b9e1f4f349afa7e4da44c4984caf
+          name: num.type.NSEC3
+          type: DEPENDENT
+          key: query.num.nsec3
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.NSEC3=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: cd55b70938e74359addda26336d0a820
+          name: num.type.NSEC3PARAM
+          type: DEPENDENT
+          key: query.num.nsec3param
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.NSEC3PARAM=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 7f93d8f87074439da71fd1987301937b
+          name: num.type.NULL
+          type: DEPENDENT
+          key: query.num.null
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.NULL=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: db977e46f6eb41219a12f7a18a300fca
+          name: num.type.NXT
+          type: DEPENDENT
+          key: query.num.nxt
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.NXT=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: a4d992728e014a3bb8233dbe81c6b70c
+          name: num.type.OPENPGPKEY
+          type: DEPENDENT
+          key: query.num.openpgpkey
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.OPENPGPKEY=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 3fd48bc378f94fa9911c6794956b45b3
+          name: num.type.OPT
+          type: DEPENDENT
+          key: query.num.opt
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.OPT=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: ae64fc1afbcf4bc6afa32354fefb3760
+          name: num.type.PTR
+          type: DEPENDENT
+          key: query.num.ptr
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.PTR=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 5dddaf984ee343c7a5a9af7e9ab74753
+          name: num.type.PX
+          type: DEPENDENT
+          key: query.num.px
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.PX=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: f268dd4bcfea4189b885fd0e29109fbe
+          name: num.type.RP
+          type: DEPENDENT
+          key: query.num.rp
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.RP=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: c17c97dbf7234a31a6bb6aeffebf80dd
+          name: num.type.RRSIG
+          type: DEPENDENT
+          key: query.num.rrsig
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.RRSIG=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 2d34e3134f6843a79162522415e5bc9b
+          name: num.type.RT
+          type: DEPENDENT
+          key: query.num.rt
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.RT=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 83fdf6afbadd49009d50b2637b45edcf
+          name: num.type.SIG
+          type: DEPENDENT
+          key: query.num.sig
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.SIG=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: fbe5a314069b4671b02617720a233e7c
+          name: num.type.SMIMEA
+          type: DEPENDENT
+          key: query.num.smimea
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.SMIMEA=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: c55c127d884a40cd8ddd07a9478e1204
+          name: num.type.SOA
+          type: DEPENDENT
+          key: query.num.soa
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.SOA=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 755932c903dc4800a8ddfa32bc324d0e
+          name: num.type.SPF
+          type: DEPENDENT
+          key: query.num.spf
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.SPF=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: d0cf6dc0a6ed4e618f4443503b31336c
+          name: num.type.SRV
+          type: DEPENDENT
+          key: query.num.srv
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.SRV=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 4795a2217bdc4d0d9186bd3212dfdec4
+          name: num.type.SSHFP
+          type: DEPENDENT
+          key: query.num.sshfp
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.SSHFP=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 87872bfad62e43ee935bbca50c8a2adc
+          name: num.type.SVCB
+          type: DEPENDENT
+          key: query.num.svcb
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.SVCB=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: d3a10225947e4f858a814d60f4df5090
+          name: num.type.TLSA
+          type: DEPENDENT
+          key: query.num.tlsa
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.TLSA=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 41b5f082fdf54cdfa2320d6c4e2b1745
+          name: num.type.TXT
+          type: DEPENDENT
+          key: query.num.txt
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.TXT=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: a4e208afb3aa4b56a0f3963abbcb426f
+          name: num.type.WKS
+          type: DEPENDENT
+          key: query.num.wks
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.WKS=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: ccc9e50e3e9d42b18e0a2cb573a99ad7
+          name: num.type.X25
+          type: DEPENDENT
+          key: query.num.x25
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.X25=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: 6c15fe4d8c2f4fa089dec5e06dd4bbbd
+          name: num.type.ZONEMD
+          type: DEPENDENT
+          key: query.num.zonemd
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.type\.ZONEMD=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query type'
+        - uuid: fd17759da073458d9fe0696969fe3503
+          name: num.rcode.FORMERR
+          type: DEPENDENT
+          key: query.rcode.formerr
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.rcode\.FORMERR=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query rcode'
+        - uuid: c22b04955b114354a58632ec7abc6b4b
+          name: num.rcode.NOERROR
+          type: DEPENDENT
+          key: query.rcode.noerror
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.rcode\.NOERROR=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query rcode'
+        - uuid: cbd0ba87eedb44e8898f4efdc57a828d
+          name: num.rcode.NOTIMP
+          type: DEPENDENT
+          key: query.rcode.notimp
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.rcode\.NOTIMP=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query rcode'
+        - uuid: 26fdd3cdd4ab4b26ac261b791e6b15c0
+          name: num.rcode.NXDOMAIN
+          type: DEPENDENT
+          key: query.rcode.nxdomain
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.rcode\.NXDOMAIN=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query rcode'
+        - uuid: b01d137bd9a140a2bb4388113cbe4a7e
+          name: num.rcode.REFUSED
+          type: DEPENDENT
+          key: query.rcode.refused
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.rcode\.REFUSED=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query rcode'
+        - uuid: 7f127ffa3390412fad6ca36e9abc9c67
+          name: num.rcode.SERVFAIL
+          type: DEPENDENT
+          key: query.rcode.servfail
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.rcode\.SERVFAIL=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query rcode'
+        - uuid: 8fd4de7fefc6411dbf5bd8badcd19e5a
+          name: num.rcode.YXDOMAIN
+          type: DEPENDENT
+          key: query.rcode.yxdomain
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'num\.rcode\.YXDOMAIN=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: 'Query rcode'
+        - uuid: 75a2770a1e6443ac8115063838c66966
+          name: size.config.disk
+          type: DEPENDENT
+          key: size.config.disk
+          delay: '0'
+          units: B
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'size\.config\.disk=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: Status
+        - uuid: c81fb143951a49348c140909ddca17a7
+          name: size.config.mem
+          type: DEPENDENT
+          key: size.config.mem
+          delay: '0'
+          units: B
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'size\.config\.mem=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: Status
+        - uuid: 1c05774f41d04304a06ae66cf75e64d4
+          name: size.db.disk
+          type: DEPENDENT
+          key: size.db.disk
+          delay: '0'
+          units: B
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'size\.db\.disk=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: Status
+        - uuid: 2cd9e7bbb4c94859a02eb67be0f924fc
+          name: size.db.mem
+          type: DEPENDENT
+          key: size.db.mem
+          delay: '0'
+          units: B
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'size\.db\.mem=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: Status
+        - uuid: 8c76606be4404e299afe725424878764
+          name: nsd-stats
+          key: 'system.run[nsd-control stats]'
+          history: '0'
+          value_type: TEXT
+          trends: '0'
+        - uuid: 74e9086452e04777b5fc29ed674448d2
+          name: uptime
+          type: DEPENDENT
+          key: uptime
+          delay: '0'
+          units: uptime
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'time\.boot=([0-9]+\.[0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: Status
+        - uuid: c932503fc121425e92b01086b27d699d
+          name: zone.master
+          type: DEPENDENT
+          key: zone.master
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'zone\.master=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: Status
+        - uuid: c51f2d58f71b4d5081318bed257e65a4
+          name: zone.slave
+          type: DEPENDENT
+          key: zone.slave
+          delay: '0'
+          preprocessing:
+            - type: REGEX
+              parameters:
+                - 'zone\.slave=([0-9]+)'
+                - \1
+          master_item:
+            key: 'system.run[nsd-control stats]'
+          tags:
+            - tag: NSD
+              value: Status
