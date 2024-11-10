@@ -15,7 +15,7 @@ remote-control:
         control-interface: 127.0.0.1
 ```
 - 下の証明書と秘密鍵にZabbix-agentからアクセスできるように権限を設定する  
-（読み込みと書き込みの権限を付ける)
+（ユーザーzabbixに読み込みと書き込みの権限を付ける)
 ```
 ・nsd_control.key
 ・nsd_control.pem
