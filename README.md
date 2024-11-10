@@ -1,6 +1,5 @@
 # これはなに
 - ZabbixでNSDの統計情報を取得できるようにしたテンプレートです
-- あと、自分用の備忘録
 
 # 動作確認済みの環境
 - Zabbix-Server: 7.0.5
@@ -16,7 +15,7 @@ remote-control:
         control-interface: 127.0.0.1
 ```
 - 下の証明書と秘密鍵にZabbix-agentからアクセスできるように権限を設定する  
-(権限は読み込みと書き込みがついていればいいはず)
+（読み込みと書き込みの権限を付ける)
 ```
 ・nsd_control.key
 ・nsd_control.pem
@@ -37,4 +36,3 @@ AllowKey=system.run[nsd-control stats]
 
 # 最後に
 - 動作は確認しましたが、保証はしませんのであしからず
-- 改善点などあればIssue等であげていただけるとうれしいです
